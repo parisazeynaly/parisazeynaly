@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — CV</title>
+  <meta name="description" content="Curriculum Vitae of Your Name" />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#101a33;
+      --text:#e9eefc;
+      --muted:#b9c3df;
+      --line:rgba(255,255,255,.12);
+      --accent:#7aa2ff;
+      --accent2:#80f0d2;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max: 980px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7fb;
+        --card:#ffffff;
+        --text:#101828;
+        --muted:#475467;
+        --line:rgba(16,24,40,.12);
+        --accent:#2e5cff;
+        --accent2:#16b364;
+        --shadow: 0 14px 30px rgba(16,24,40,.10);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 450px at 12% 10%, rgba(122,162,255,.22), transparent 55%),
+        radial-gradient(650px 380px at 80% 20%, rgba(128,240,210,.16), transparent 55%),
+        radial-gradient(600px 400px at 50% 110%, rgba(122,162,255,.10), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    .topbar{
+      display:flex; gap:10px; justify-content:flex-end; align-items:center;
+      margin-bottom:14px;
+    }
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      text-decoration:none;
+      font-size:14px;
+      display:inline-flex; gap:8px; align-items:center;
+      cursor:pointer;
+    }
+    .btn:hover{border-color:rgba(255,255,255,.22)}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    .card .inner{padding:22px}
+    .hero{
+      position:relative;
+    }
+    .hero h1{
+      margin:0 0 6px;
+      font-size:34px;
+      letter-spacing:-.02em;
+    }
+    .tagline{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0}
+    .chip{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      font-size:13px;
+      color:var(--muted);
+    }
+    .accent{
+      background: linear-gradient(90deg, rgba(122,162,255,.18), rgba(128,240,210,.14));
+      border-color: rgba(122,162,255,.28);
+      color: var(--text);
+    }
+    .section{padding:0}
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:18px 22px;
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.06);
+    }
+    .section-title h2{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .content{padding:18px 22px}
+    .item{padding:14px 0; border-bottom:1px solid var(--line)}
+    .item:last-child{border-bottom:none; padding-bottom:0}
+    .row{
+      display:flex;
+      gap:12px;
+      align-items:baseline;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .role{
+      font-weight:650;
+      font-size:16px;
+      margin:0;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin:0;
+      white-space:nowrap;
+    }
+    .sub{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    ul{margin:10px 0 0 18px; padding:0}
+    li{margin:6px 0}
+    .kvs{display:grid; gap:10px}
+    .kv{
+      display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.04);
+    }
+    .kv b{font-weight:650}
+    .kv span{color:var(--muted)}
+    .badge{
+      display:inline-flex; align-items:center;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid rgba(122,162,255,.35);
+      background:rgba(122,162,255,.12);
+      color:var(--text);
+      font-size:12px;
+      margin-left:8px;
+    }
+    .links a{
+      display:block;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      text-decoration:none;
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+    }
+    .links a:hover{border-color:rgba(255,255,255,.22)}
+    .links small{display:block; color:var(--muted); margin-top:2px}
+    .footer{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+
+    /* Print-friendly */
+    @media print{
+      body{background:#fff}
+      .topbar{display:none}
+      .card{box-shadow:none}
+      .section-title{background:#fff}
+      a{text-decoration:none}
+      .wrap{padding:0}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <button class="btn" onclick="window.print()" title="Save as PDF">
+        Print / Save PDF
+      </button>
+      <a class="btn" href="#contact" title="Jump to contact">Contact</a>
+    </div>
+
+    <div class="grid">
+      <!-- LEFT COLUMN -->
+      <main class="card hero">
+        <div class="inner">
+          <h1>Your Name</h1>
+          <p class="tagline">
+            MSc Data Science (Federico II) • NLP / AI Systems Engineering • PhD Applicant
+          </p>
+
+          <p style="margin:0; color:var(--muted)">
+            Short professional summary (2–4 lines). Example: I am a second-year MSc student in Data Science
+            focusing on NLP, LLMs, and AI systems engineering. Interested in research on security testing of LLMs,
+            causal RL, and robust evaluation/monitoring in MLOps pipelines.
+          </p>
+
+          <div class="chips">
+            <span class="chip accent">NLP</span>
+            <span class="chip accent">LLMs</span>
+            <span class="chip">RAG</span>
+            <span class="chip">MLOps</span>
+            <span class="chip">Causal RL</span>
+            <span class="chip">Security Testing</span>
+          </div>
+        </div>
+
+        <div class="section-title"><h2>Experience</h2></div>
+        <div class="content section">
+          <div class="item">
+            <div class="row">
+              <p class="role">AI Systems Engineering Intern <span class="badge">Internship</span></p>
+              <p class="meta">2025 • Naples, Italy</p>
+            </div>
+            <p class="sub">
+              5G Academy – University of Naples Federico II • NETWIN POC-3 Intelligent Hologram Platform (RESTART Consortium)
+            </p>
+            <ul>
+              <li>One achievement-focused bullet with measurable impact if possible.</li>
+              <li>Another bullet: tools/stack used (e.g., Python, Docker, Kubernetes, MLflow, Evidently).</li>
+              <li>Another bullet: what you improved/implemented (pipelines, deployment, monitoring, evaluation, etc.).</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="role">Research / Thesis Project</p>
+              <p class="meta">2025 • Federico II</p>
+            </div>
+            <p class="sub">
+              Security testing of LLMs via (causal) reinforcement learning (example placeholder).
+            </p>
+            <ul>
+              <li>Define the research question, method (e.g., RLbreaker + causal knowledge), and evaluation.</li>
+              <li>Mention datasets/benchmarks, reproducibility, and reporting.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-title"><h2>Education</h2></div>
+        <div class="content section">
+          <div class="item">
+            <div class="row">
+              <p class="role">MSc in Data Science</p>
+              <p class="meta">2024–Present</p>
+            </div>
+            <p class="sub">University of Naples Federico II • Focus: Text / NLP, AI Systems Engineering</p>
+            <ul>
+              <li>Relevant coursework: NLP, ML, Deep Learning, MLOps, Software Architecture.</li>
+              <li>Optional: GPA, scholarships, awards.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="role">BSc in Mechanical Engineering</p>
+              <p class="meta">Shahrekord, Iran</p>
+            </div>
+            <p class="sub">Add key details if useful (thesis, ranking, notable projects).</p>
+          </div>
+        </div>
+
+        <div class="section-title"><h2>Projects</h2></div>
+        <div class="content section">
+          <div class="item">
+            <div class="row">
+              <p class="role">RAG Pipeline from Scratch (No LangChain/LlamaIndex)</p>
+              <p class="meta">GitHub • 2025</p>
+            </div>
+            <p class="sub">Brief one-line summary: ingestion → chunking → embeddings → retrieval → generation → evaluation.</p>
+            <ul>
+              <li>Tech: Python, Transformers, FAISS/Chroma, FastAPI (edit to match).</li>
+              <li>Outcome: latency, accuracy, evaluation results (if available).</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="role">LLM Fine-tuning with LoRA</p>
+              <p class="meta">2025</p>
+            </div>
+            <p class="sub">Fine-tuned a base model using PEFT + HuggingFace Transformers (edit details).</p>
+            <ul>
+              <li>Include data type, training setup, and results.</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="card" id="contact">
+        <div class="inner">
+          <h2 style="margin:0 0 10px; font-size:18px">Contact</h2>
+          <div class="kvs">
+            <div class="kv"><b>Email</b><span>you@example.com</span></div>
+            <div class="kv"><b>Location</b><span>Naples, Italy</span></div>
+            <div class="kv"><b>Phone</b><span>+39 ...</span></div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <h2 style="margin:0 0 10px; font-size:18px">Links</h2>
+          <div class="links" style="display:grid; gap:10px">
+            <a href="https://github.com/your-username" target="_blank" rel="noreferrer">
+              GitHub
+              <small>github.com/your-username</small>
+            </a>
+            <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">
+              LinkedIn
+              <small>linkedin.com/in/your-handle</small>
+            </a>
+            <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">
+              Google Scholar (optional)
+              <small>scholar.google.com</small>
+            </a>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <h2 style="margin:0 0 10px; font-size:18px">Skills</h2>
+          <div class="chips" style="margin:0">
+            <span class="chip">Python</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">Transformers</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">MLflow</span>
+            <span class="chip">Evidently</span>
+            <span class="chip">Alibi-Detect</span>
+            <span class="chip">Git</span>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <h2 style="margin:0 0 10px; font-size:18px">Publications / Awards</h2>
+          <div class="content section" style="padding:0">
+            <div class="item" style="padding-top:0">
+              <div class="row">
+                <p class="role" style="font-size:14px; margin:0">Add item (optional)</p>
+                <p class="meta" style="margin:0">Year</p>
+              </div>
+              <p class="sub" style="margin-top:6px">Conference/journal or award context.</p>
+            </div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <h2 style="margin:0 0 10px; font-size:18px">Languages</h2>
+          <div class="kvs">
+            <div class="kv"><b>English</b><span>Level</span></div>
+            <div class="kv"><b>Persian (Farsi)</b><span>Native</span></div>
+            <div class="kv"><b>Italian</b><span>Level</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <p class="footer">
+      Tip: Use your browser’s Print → “Save as PDF” to export a PDF CV.
+    </p>
+  </div>
+</body>
+</html>
