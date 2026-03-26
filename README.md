@@ -1,4 +1,4 @@
-# Parisa Zeynaly
+
 
 MSc Data Science & Engineering @ University of Naples Federico II  
 Research: LLM Safety · Adversarial ML · Reinforcement Learning
