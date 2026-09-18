@@ -10,7 +10,7 @@ Focusing on bridging Causal Inference, Reinforcement Learning (RL), and LLM secu
 ---
 
 ### 📄 Featured Project & M.Sc. Thesis
-#### **CausalRLBreaker: Security Testing of Large Language Models via Causal Reinforcement Learning**
+####    Security Testing of Large Language Models via Causal Reinforcement Learning**
 *Supervised by Prof. Roberto Pietrantuono (Expected: Sep 2026)*
 
 *   **Approach:** Embeds FCI-discovered causal structures into a PPO-based agent for dense reward shaping and action masking.
